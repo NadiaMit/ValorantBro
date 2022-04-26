@@ -8,7 +8,7 @@ Discord Bot that gives you a random Valorant Agent.
 
 All commands below are to be executed relative to the repository's root directory.
 
-### Manual
+### Install Manually
 
 #### Prerequisites
 
@@ -31,13 +31,13 @@ which you can obtain from your [bot's application page](https://discord.com/deve
     ```node .```
 
 
-### Using Docker
+### Install Using Docker
 
 #### Prerequisites
 
 Install the latest version of [Docker](https://www.docker.com/) and optionally [Docker Compose](https://docs.docker.com/compose/install/).
 
-#### Via `docker`:
+#### Via Docker:
 
 1. You can easily build a local container image:
 
@@ -55,7 +55,7 @@ which you can obtain from your [bot's application page](https://discord.com/deve
 
     As you can see, the `.env` file you created is also (bind-)mounted into the container in order to securely provide your bot's token.
 
-### Via `docker-compose`:
+#### Via Docker Compose:
 
 1. Build the image and run the container in one go:
 
