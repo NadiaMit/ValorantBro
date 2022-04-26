@@ -1,4 +1,4 @@
-ARG NODE_VERSION=17
+ARG NODE_VERSION=17-alpine
 FROM node:${NODE_VERSION}
 
 RUN echo ${NODE_VERSION}
@@ -7,7 +7,7 @@ RUN echo ${TINI_VERSION}
 # Add Tini
 # See: https://github.com/nodejs/docker-node/blob/main/docs/BestPractices.md#handling-kernel-signals
 ARG TINI_VERSION=v0.19.0
-ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /tini
+ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-static /tini
 RUN chmod +x /tini
 ENTRYPOINT ["/tini", "--"]
 
