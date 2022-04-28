@@ -38,10 +38,10 @@ const agent_link = [
 'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/breach_portrait.png', 
 'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/skye_portrait.png', 
 'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/yoru_portrait.png', 
-'https://titles.trackercdn.com/valorant-api/agents/41fb69c1-4189-7b37-f117-bcaf1e96f1bf/fullportrait.png',
-'https://titles.trackercdn.com/valorant-api/agents/601dbbe7-43ce-be57-2a40-4abd24953621/fullportrait.png',
-'https://titles.trackercdn.com/valorant-api/agents/22697a3d-45bf-8dd7-4fec-84a9e28c69d7/fullportrait.png',
-'https://titles.trackercdn.com/valorant-api/agents/bb2a4828-46eb-8cd1-e765-15848195d751/fullportrait.png',
+'https://static.wikia.nocookie.net/valorant/images/8/8a/Astra_artwork.png/revision/latest/scale-to-width-down/326?cb=20210302170140',
+'https://static.wikia.nocookie.net/valorant/images/a/a9/KAYO_artwork.png/revision/latest/scale-to-width-down/326?cb=20210622163116',
+'https://static.wikia.nocookie.net/valorant/images/5/5d/Chamber_artwork.png/revision/latest/scale-to-width-down/326?cb=20211031124636',
+'https://static.wikia.nocookie.net/valorant/images/a/ad/Neon_artwork.png/revision/latest/scale-to-width-down/326?cb=20220112155550',
 'https://static.wikia.nocookie.net/valorant/images/8/8a/Fade_artwork.png/revision/latest/scale-to-width-down/326?cb=20220425005211'];
 
 //Functions------------------------------------------------------------------
