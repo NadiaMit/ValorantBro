@@ -77,7 +77,7 @@ client.on('messageCreate', message => {
     var msg = message.content;
   
     if (msg === prefix + 'allAgents') {
-        for (let i = 0; i < 18; i++) {
+        for (let i = 0; i < 19; i++) {
             message.channel.send({
                 content: agent_names[i],
                 embeds: [new MessageEmbed().setImage(agent_link[i])],
