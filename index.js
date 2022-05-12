@@ -53,7 +53,7 @@ function randomInt(min, max) { // min and max included
 client.on("messageCreate", message => {
   var msg = message.content;
 
-  if (msg === prefix + 'help') {
+  if (msg.toUpperCase() === prefix + 'HELP') {
     message.channel.send("`!agent`: gives you a random Valorant agent");
   }
 })
@@ -61,7 +61,7 @@ client.on("messageCreate", message => {
 client.on('messageCreate', message => {
     var msg = message.content;
   
-    if (msg === prefix + 'agent') {
+    if (msg.toUpperCase() === prefix + 'AGENT') {
         var randomNumber = randomInt(0,18);
       
         message.channel.send({
@@ -76,7 +76,7 @@ client.on('messageCreate', message => {
 client.on('messageCreate', message => {
     var msg = message.content;
   
-    if (msg === prefix + 'allAgents') {
+    if (msg.toUpperCase() === prefix + 'ALLAGENTS') {
         for (let i = 0; i < 19; i++) {
             message.channel.send({
                 content: agent_names[i],
