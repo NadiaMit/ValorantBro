@@ -21,7 +21,7 @@ client.on('ready', () => {
 //Global Variables-----------------------------------------------------------
 const prefix = '!'
 
-const agent_names = ['Brimstone','Viper', 'Omen', 'Killjoy','Cypher', 'Sova', 'Sage', 'Phoenix', 'Jett', 'Reyna', 'Raze', 'Breach', 'Skye', 'Yoru', 'Astra', 'KAY/O', 'Chamber', 'Neon', 'Fade'];
+const agent_names = ['Brimstone','Viper', 'Omen', 'Killjoy','Cypher', 'Sova', 'Sage', 'Phoenix', 'Jett', 'Reyna', 'Raze', 'Breach', 'Skye', 'Yoru', 'Astra', 'KAY/O', 'Chamber', 'Neon', 'Fade', 'Harbor'];
 
 const agent_link = [
 'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/brimstone_portrait.png',
@@ -42,7 +42,8 @@ const agent_link = [
 'https://static.wikia.nocookie.net/valorant/images/a/a9/KAYO_artwork.png/revision/latest/scale-to-width-down/326?cb=20210622163116',
 'https://static.wikia.nocookie.net/valorant/images/5/5d/Chamber_artwork.png/revision/latest/scale-to-width-down/326?cb=20211031124636',
 'https://static.wikia.nocookie.net/valorant/images/a/ad/Neon_artwork.png/revision/latest/scale-to-width-down/326?cb=20220112155550',
-'https://static.wikia.nocookie.net/valorant/images/8/8a/Fade_artwork.png/revision/latest/scale-to-width-down/326?cb=20220425005211'];
+'https://static.wikia.nocookie.net/valorant/images/8/8a/Fade_artwork.png/revision/latest/scale-to-width-down/326?cb=20220425005211',
+'https://static.wikia.nocookie.net/valorant/images/5/5c/Harbor_Artwork_Full.png/revision/latest/scale-to-width-down/350?cb=20221018133900'];
 
 //Functions------------------------------------------------------------------
 function randomInt(min, max) { // min and max included 
@@ -62,7 +63,7 @@ client.on('messageCreate', message => {
     var msg = message.content;
   
     if (msg.toUpperCase() === prefix + 'AGENT') {
-        var randomNumber = randomInt(0,18);
+        var randomNumber = randomInt(0,19);
       
         message.channel.send({
             content: 'Your Agent: '+ agent_names[randomNumber],
@@ -77,7 +78,7 @@ client.on('messageCreate', message => {
     var msg = message.content;
   
     if (msg.toUpperCase() === prefix + 'ALLAGENTS') {
-        for (let i = 0; i < 19; i++) {
+        for (let i = 0; i < 20; i++) {
             message.channel.send({
                 content: agent_names[i],
                 embeds: [new MessageEmbed().setImage(agent_link[i])],
