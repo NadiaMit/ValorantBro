@@ -2,7 +2,10 @@
 
 ![image](https://i.imgur.com/OYLvGsb.png)
 
-Discord Bot that gives you a random Valorant Agent.
+Discord Bot that suggests a random Valorant agent in discord for you to play.
+
+* ``!agent`` sends back a message with a random agent from Valorant
+* ``!allagents`` sends back all agents. (Mainly for debugging at this stage)
 
 ## Installation & Launch
 
