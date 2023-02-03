@@ -24,30 +24,32 @@ const prefix = '!'
 const agent_names = ['Brimstone','Viper', 'Omen', 'Killjoy','Cypher', 'Sova', 'Sage', 'Phoenix', 'Jett', 'Reyna', 'Raze', 'Breach', 'Skye', 'Yoru', 'Astra', 'KAY/O', 'Chamber', 'Neon', 'Fade', 'Harbor'];
 
 const agent_link = [
-'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/brimstone_portrait.png',
-'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/viper_portrait.png',
-'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/omen_portrait.png',
-'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/killjoy_portrait.png', 
-'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/cypher_portrait.png', 
-'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/sova_portrait.png', 
-'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/sage_portrait.png',
-'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/phoenix_portrait.png', 
-'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/jett_portrait.png', 
-'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/reyna_portrait.png', 
-'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/raze_portrait.png',
-'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/breach_portrait.png', 
-'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/skye_portrait.png', 
-'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/yoru_portrait.png', 
-'https://static.wikia.nocookie.net/valorant/images/8/8a/Astra_artwork.png/revision/latest/scale-to-width-down/326?cb=20210302170140',
-'https://static.wikia.nocookie.net/valorant/images/a/a9/KAYO_artwork.png/revision/latest/scale-to-width-down/326?cb=20210622163116',
-'https://static.wikia.nocookie.net/valorant/images/5/5d/Chamber_artwork.png/revision/latest/scale-to-width-down/326?cb=20211031124636',
-'https://static.wikia.nocookie.net/valorant/images/a/ad/Neon_artwork.png/revision/latest/scale-to-width-down/326?cb=20220112155550',
-'https://static.wikia.nocookie.net/valorant/images/8/8a/Fade_artwork.png/revision/latest/scale-to-width-down/326?cb=20220425005211',
-'https://static.wikia.nocookie.net/valorant/images/5/5c/Harbor_Artwork_Full.png/revision/latest/scale-to-width-down/350?cb=20221018133900'];
+    'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/brimstone_portrait.png',
+    'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/viper_portrait.png',
+    'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/omen_portrait.png',
+    'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/killjoy_portrait.png', 
+    'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/cypher_portrait.png', 
+    'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/sova_portrait.png', 
+    'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/sage_portrait.png',
+    'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/phoenix_portrait.png', 
+    'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/jett_portrait.png', 
+    'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/reyna_portrait.png', 
+    'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/raze_portrait.png',
+    'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/breach_portrait.png', 
+    'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/skye_portrait.png', 
+    'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/yoru_portrait.png', 
+    'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/astra_portrait.png',
+    'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/kayo_portrait.png',
+    'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/chamber_portrait.png',
+    'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/neon_portrait.png',
+    'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/fade_portrait.png',
+    'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/harbor_portrait.png'];
+
+const numAgents = agent_names.length;
 
 //Functions------------------------------------------------------------------
-function randomInt(min, max) { // min and max included 
-  return Math.floor(Math.random() * (max - min + 1) + min)
+function randomInt(min, max) { // [min, max)    <- {x | min <= x < max}
+  return Math.floor(Math.random() * (max - min) + min)
 }
 
 //Messages-------------------------------------------------------------------
@@ -63,7 +65,7 @@ client.on('messageCreate', message => {
     var msg = message.content;
   
     if (msg.toUpperCase() === prefix + 'AGENT') {
-        var randomNumber = randomInt(0,19);
+        var randomNumber = randomInt(0, numAgents);
       
         message.channel.send({
             content: 'Your Agent: '+ agent_names[randomNumber],
@@ -78,7 +80,7 @@ client.on('messageCreate', message => {
     var msg = message.content;
   
     if (msg.toUpperCase() === prefix + 'ALLAGENTS') {
-        for (let i = 0; i < 20; i++) {
+        for (let i = 0; i < numAgents; i++) {
             message.channel.send({
                 content: agent_names[i],
                 embeds: [new MessageEmbed().setImage(agent_link[i])],
