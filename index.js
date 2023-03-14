@@ -21,7 +21,7 @@ client.on('ready', () => {
 //Global Variables-----------------------------------------------------------
 const prefix = '!'
 
-const agent_names = ['Brimstone','Viper', 'Omen', 'Killjoy','Cypher', 'Sova', 'Sage', 'Phoenix', 'Jett', 'Reyna', 'Raze', 'Breach', 'Skye', 'Yoru', 'Astra', 'KAY/O', 'Chamber', 'Neon', 'Fade', 'Harbor'];
+const agent_names = ['Brimstone','Viper', 'Omen', 'Killjoy','Cypher', 'Sova', 'Sage', 'Phoenix', 'Jett', 'Reyna', 'Raze', 'Breach', 'Skye', 'Yoru', 'Astra', 'KAY/O', 'Chamber', 'Neon', 'Fade', 'Harbor', 'Gekko'];
 
 const agent_link = [
     'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/brimstone_portrait.png',
@@ -43,7 +43,8 @@ const agent_link = [
     'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/chamber_portrait.png',
     'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/neon_portrait.png',
     'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/fade_portrait.png',
-    'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/harbor_portrait.png'];
+    'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/harbor_portrait.png',
+    'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/gekko_portrait.png'];
 
 const numAgents = agent_names.length;
 
