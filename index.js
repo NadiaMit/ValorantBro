@@ -1,11 +1,11 @@
 require('dotenv').config(); //initialize dotenv
-const { Client, Intents, MessageAttachment, MessageEmbed } = require('discord.js');
+const { Client, Intents, MessageEmbed } = require('discord.js');
  
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_MESSAGE_REACTIONS] });
 const botToken = process.env['TOKEN']
 
 //Always on:
-var http = require('http');  http.createServer(function (req, res) {   
+let http = require('http');  http.createServer(function (req, res) {   
   res.write("I'm alive");   
   res.end(); 
 }).listen(8080);
@@ -13,17 +13,17 @@ var http = require('http');  http.createServer(function (req, res) {
 
 client.on('ready', () => {  
   console.log('Logged in as ValorantBro!')
-  let activities = [`Valorant`, `Valorant`];
-  i = 0;  
+  const activities = [`Valorant`, `Valorant`];
+  let i = 0;  
   setInterval(() => client.user.setActivity(`${activities[i++ %  activities.length]}`,  {type:"PLAYING"}), 5000)
 })
        
-//Global Variables-----------------------------------------------------------
+//Global variables-----------------------------------------------------------
 const prefix = '!'
 
 const agent_names = ['Brimstone','Viper', 'Omen', 'Killjoy','Cypher', 'Sova', 'Sage', 'Phoenix', 'Jett', 'Reyna', 'Raze', 'Breach', 'Skye', 'Yoru', 'Astra', 'KAY/O', 'Chamber', 'Neon', 'Fade', 'Harbor', 'Gekko'];
 
-const agent_link = [
+const agent_links = [
     'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/brimstone_portrait.png',
     'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/viper_portrait.png',
     'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/omen_portrait.png',
@@ -55,22 +55,53 @@ function randomInt(min, max) { // [min, max)    <- {x | min <= x < max}
 
 //Messages-------------------------------------------------------------------
 client.on("messageCreate", message => {
-  var msg = message.content;
+  const msg = message.content;
 
+  /*
   if (msg.toUpperCase() === prefix + 'HELP') {
     message.channel.send("`!agent`: gives you a random Valorant agent");
-  }
-})
+  */
 
+  switch (msg.toUpperCase()) {
+    case prefix + 'HELP':{
+      message.channel.send("`!agent`: gives you a random Valorant agent\n`!allagents`: gives you all Valorant agents");
+      break;
+    }
+    case prefix + 'AGENT': {
+      const randomNumber = randomInt(0, numAgents);
+  
+      message.channel.send({
+        content: 'Your Agent: '+ agent_names[randomNumber],
+        embeds: [new MessageEmbed().setImage(agent_links[randomNumber])],
+      })
+      //.then(console.log)
+      .catch(console.error);
+      break;
+    }
+    case prefix + 'ALLAGENTS': {
+      for (let i = 0; i < numAgents; i++) {
+        message.channel.send({
+          content: agent_names[i],
+          embeds: [new MessageEmbed().setImage(agent_links[i])],
+        })
+        //.then(console.log)
+        .catch(console.error);
+      }
+      break;
+    }
+  }
+});
+
+/*
 client.on('messageCreate', message => {
-    var msg = message.content;
+    let msg = message.content;
   
     if (msg.toUpperCase() === prefix + 'AGENT') {
-        var randomNumber = randomInt(0, numAgents);
+        let randomNumber = randomInt(0, numAgents);
       
         message.channel.send({
             content: 'Your Agent: '+ agent_names[randomNumber],
-            embeds: [new MessageEmbed().setImage(agent_link[randomNumber])],
+            embeds: [new MessageEmbed().setImage(agent_links[randomNumber])],
         })
         //.then(console.log)
         .catch(console.error);
@@ -78,19 +109,20 @@ client.on('messageCreate', message => {
 });
 
 client.on('messageCreate', message => {
-    var msg = message.content;
+    let msg = message.content;
   
     if (msg.toUpperCase() === prefix + 'ALLAGENTS') {
         for (let i = 0; i < numAgents; i++) {
             message.channel.send({
                 content: agent_names[i],
-                embeds: [new MessageEmbed().setImage(agent_link[i])],
+                embeds: [new MessageEmbed().setImage(agent_links[i])],
             })
             //.then(console.log)
             .catch(console.error);
         }
     }
 });
+*/
 
 //------------------------------------------------------------------------
 
