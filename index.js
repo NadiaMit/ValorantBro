@@ -67,7 +67,7 @@ client.on("messageCreate", message => {
   
   switch (msg.toUpperCase()) {
     case prefix + 'HELP':{
-      message.channel.send("Here are the available commands:\n`!agent`: gives you a random Valorant agent\n`!allagents`: gives you all Valorant agents");
+      message.channel.send("Here are the available commands:\n- `!agent`: gives you a random Valorant agent\n- `!allagents`: gives you all Valorant agents");
       break;
     }
     case prefix + 'AGENT': {
@@ -93,7 +93,7 @@ client.on("messageCreate", message => {
       break;
     }
     default: {
-      message.channel.send("Not a valid command!\n\nHere are the available commands:\n`!agent`: gives you a random Valorant agent\n`!allagents`: gives you all Valorant agents");
+      message.channel.send("Not a valid command!\n\nHere are the available commands:\n- `!agent`: gives you a random Valorant agent\n- `!allagents`: gives you all Valorant agents");
       break;
     }
   }
