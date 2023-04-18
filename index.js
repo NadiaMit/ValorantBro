@@ -57,12 +57,14 @@ function randomInt(min, max) { // [min, max)    <- {x | min <= x < max}
 client.on("messageCreate", message => {
   const msg = message.content;
 
-  
+  /*
   if (msg.toUpperCase() === prefix + 'HELP') {
     message.channel.send("`!agent`: gives you a random Valorant agent");
   }
-
-  /*
+  */
+  //check if message starts with prefix
+  if(!msg.toUpperCase().startsWith(prefix)) return;
+  
   switch (msg.toUpperCase()) {
     case prefix + 'HELP':{
       message.channel.send("Here are the available commands:\n`!agent`: gives you a random Valorant agent\n`!allagents`: gives you all Valorant agents");
@@ -95,10 +97,9 @@ client.on("messageCreate", message => {
       break;
     }
   }
-  */
 });
 
-
+/*
 client.on('messageCreate', message => {
     const msg = message.content;
   
@@ -128,6 +129,7 @@ client.on('messageCreate', message => {
         }
     }
 });
+*/
 
 
 //------------------------------------------------------------------------
