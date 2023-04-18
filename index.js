@@ -57,11 +57,12 @@ function randomInt(min, max) { // [min, max)    <- {x | min <= x < max}
 client.on("messageCreate", message => {
   const msg = message.content;
 
-  /*
+  
   if (msg.toUpperCase() === prefix + 'HELP') {
     message.channel.send("`!agent`: gives you a random Valorant agent");
-  */
+  }
 
+  /*
   switch (msg.toUpperCase()) {
     case prefix + 'HELP':{
       message.channel.send("Here are the available commands:\n`!agent`: gives you a random Valorant agent\n`!allagents`: gives you all Valorant agents");
@@ -94,14 +95,15 @@ client.on("messageCreate", message => {
       break;
     }
   }
+  */
 });
 
-/*
+
 client.on('messageCreate', message => {
-    let msg = message.content;
+    const msg = message.content;
   
     if (msg.toUpperCase() === prefix + 'AGENT') {
-        let randomNumber = randomInt(0, numAgents);
+        const randomNumber = randomInt(0, numAgents);
       
         message.channel.send({
             content: 'Your Agent: '+ agent_names[randomNumber],
@@ -113,7 +115,7 @@ client.on('messageCreate', message => {
 });
 
 client.on('messageCreate', message => {
-    let msg = message.content;
+    const msg = message.content;
   
     if (msg.toUpperCase() === prefix + 'ALLAGENTS') {
         for (let i = 0; i < numAgents; i++) {
@@ -126,7 +128,7 @@ client.on('messageCreate', message => {
         }
     }
 });
-*/
+
 
 //------------------------------------------------------------------------
 
