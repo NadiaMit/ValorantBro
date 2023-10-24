@@ -21,30 +21,55 @@ client.on('ready', () => {
 //Global variables-----------------------------------------------------------
 const prefix = '!'
 
-const agent_names = ['Brimstone','Viper', 'Omen', 'Killjoy','Cypher', 'Sova', 'Sage', 'Phoenix', 'Jett', 'Reyna', 'Raze', 'Breach', 'Skye', 'Yoru', 'Astra', 'KAY/O', 'Chamber', 'Neon', 'Fade', 'Harbor', 'Gekko'];
+const agent_names = [
+  'Brimstone',
+  'Viper',
+  'Omen',
+  'Killjoy',
+  'Cypher',
+  'Sova',
+  'Sage',
+  'Phoenix',
+  'Jett',
+  'Reyna',
+  'Raze',
+  'Breach',
+  'Skye',
+  'Yoru',
+  'Astra',
+  'KAY/O',
+  'Chamber',
+  'Neon',
+  'Fade',
+  'Harbor',
+  'Gekko',
+  'Deadlock'
+];
 
 const agent_links = [
-    'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/brimstone_portrait.png',
-    'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/viper_portrait.png',
-    'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/omen_portrait.png',
-    'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/killjoy_portrait.png', 
-    'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/cypher_portrait.png', 
-    'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/sova_portrait.png', 
-    'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/sage_portrait.png',
-    'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/phoenix_portrait.png', 
-    'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/jett_portrait.png', 
-    'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/reyna_portrait.png', 
-    'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/raze_portrait.png',
-    'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/breach_portrait.png', 
-    'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/skye_portrait.png', 
-    'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/yoru_portrait.png', 
-    'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/astra_portrait.png',
-    'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/kayo_portrait.png',
-    'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/chamber_portrait.png',
-    'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/neon_portrait.png',
-    'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/fade_portrait.png',
-    'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/harbor_portrait.png',
-    'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/gekko_portrait.png'];
+  'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/brimstone_portrait.png',
+  'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/viper_portrait.png',
+  'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/omen_portrait.png',
+  'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/killjoy_portrait.png', 
+  'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/cypher_portrait.png', 
+  'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/sova_portrait.png', 
+  'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/sage_portrait.png',
+  'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/phoenix_portrait.png', 
+  'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/jett_portrait.png', 
+  'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/reyna_portrait.png', 
+  'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/raze_portrait.png',
+  'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/breach_portrait.png', 
+  'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/skye_portrait.png', 
+  'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/yoru_portrait.png', 
+  'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/astra_portrait.png',
+  'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/kayo_portrait.png',
+  'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/chamber_portrait.png',
+  'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/neon_portrait.png',
+  'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/fade_portrait.png',
+  'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/harbor_portrait.png',
+  'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/gekko_portrait.png',
+  'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/deadlock_portrait.png'
+];
 
 const numAgents = agent_names.length;
 
