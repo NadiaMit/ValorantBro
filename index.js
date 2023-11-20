@@ -43,9 +43,11 @@ const agent_names = [
   'Fade',
   'Harbor',
   'Gekko',
-  'Deadlock'
+  'Deadlock'.
+  'Iso'
 ];
 
+//TODO: find better image of Iso
 const agent_links = [
   'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/brimstone_portrait.png',
   'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/viper_portrait.png',
@@ -68,7 +70,8 @@ const agent_links = [
   'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/fade_portrait.png',
   'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/harbor_portrait.png',
   'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/gekko_portrait.png',
-  'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/deadlock_portrait.png'
+  'https://trackercdn.com/cdn/tracker.gg/valorant/db/agents/deadlock_portrait.png',
+  'https://static.wikia.nocookie.net/valorant/images/5/5f/Iso_Artwork_Full.png/revision/latest/scale-to-width-down/1000?cb=20231031131018'
 ];
 
 const numAgents = agent_names.length;
