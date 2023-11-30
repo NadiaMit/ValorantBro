@@ -43,7 +43,7 @@ const agent_names = [
   'Fade',
   'Harbor',
   'Gekko',
-  'Deadlock'.
+  'Deadlock',
   'Iso'
 ];
 
